@@ -1,0 +1,6 @@
+#ifndef TICTACTOE_LIBRARY_H
+#define TICTACTOE_LIBRARY_H
+
+void hello();
+
+#endif //TICTACTOE_LIBRARY_H
