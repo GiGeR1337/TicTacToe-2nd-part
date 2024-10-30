@@ -32,7 +32,7 @@ JNIEXPORT jcharArray JNICALL Java_Main_getBoard(JNIEnv* env, jobject) {
     return result;
 }
 
-bool checkForWinner() {
+bool winCheck() {
     for (int i = 0; i < 5; i++) {
         if (board[i][0] != ' ' && board[i][0] == board[i][1] && board[i][1] == board[i][2] &&
             board[i][2] == board[i][3] && board[i][3] == board[i][4])
@@ -57,7 +57,7 @@ JNIEXPORT jint JNICALL Java_Main_makeMove(JNIEnv*, jobject, jint row, jint col) 
         board[row][col] = currentPlayer;
         movesCount++;
 
-        bool win = checkForWinner();
+        bool win = winCheck();
         if (win) return 1;
 
         if (movesCount == 25) return 2;
